@@ -4,7 +4,6 @@ define(['app/svg-canvas', 'app/painter', 'app/utils'], function(SVGCanvas, Paint
         var gElement = document.createElementNS('http://www.w3.org/2000/svg', 'g');
         svgCanvas.appendChild(gElement);
         this._svg = new SVGCanvas(gElement);
-        this._svg.setRotatable(true);
 
         this._centerPos = centerPos;
         this._innerRadius = innerRadius;

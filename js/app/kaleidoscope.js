@@ -1,10 +1,16 @@
 define(['app/ring', 'app/svg-canvas', 'app/painter', 'app/utils'], function(Ring, SVGCanvas, Painter, Utils) {
     class Kaleidoscope{
       constructor(svgCanvas, radius, center) {
-        var gElement = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-        svgCanvas.appendChild(gElement);
-        this._svg = new SVGCanvas(gElement);
-        this._svg.translate(center.x, center.y);
+        
+        var outerGElement = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        svgCanvas.appendChild(outerGElement);
+        var outerG = new SVGCanvas(outerGElement);
+        outerG.translate(center.x, center.y);
+        var innerGElement = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+        outerG.appendChild(innerGElement);
+        this._svg = new SVGCanvas(innerGElement);
+        this._svg.setRotatable(true);
+
         this._center = {x: 0, y: 0};
         this._radius = radius;
         this._ringList = [];
