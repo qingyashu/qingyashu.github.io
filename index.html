@@ -1,35 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119233774-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      gtag("js", new Date());
 
-      gtag('config', 'UA-119233774-1');
+      gtag("config", "UA-119233774-1");
     </script>
     <title>Qingya Shu</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
   </head>
   
   <body>
-    <!--[if !IE]-->
-    <div class='wrapper'>
-      <svg class='canvas'></svg>
-    </div>
-    <div class='empty-content'>&nbsp;</div>
-    <div class='entrance-wrapper'>
-      <div class='entrance-content'>
-        <img class='avatar' src='./resources/image/icon.jpg'/>
-        <p class='intro-text'>
-          <a href='/blog'>Qingya Shu</a>
+    <div class="bg"></div>
+    <div class="empty-content"></div>
+    <div class="entrance-wrapper">
+      <div class="entrance-content">
+        <img class="avatar" src="./icon.jpg" alt="avatar" />
+        <p class="intro-text">
+          <a href="/blog">Qingya Shu</a>
         </p>
       </div>
     </div>
-    <script data-main="js/app.js" src="js/require.js"></script>
-    <!--[endif]-->
-    <!--[if IE] <img src="./resources/image/bg.png" /> [endif]-->
   </body>
+  <style>
+    html,
+    body,
+    .empty-content {
+      height: 100%;
+      margin: 0;
+    }
+
+    .bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-image: url(./bg.jpg);
+      background-size: cover;
+      background-position: bottom;
+    }
+
+    .entrance-wrapper {
+      position: relative;
+      height: 50%;
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    .entrance-content .avatar {
+      width: 120px;
+      height: 120px;
+      left: calc(50% - 60px);
+      top: -60px;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0px 0px 6px #dddddd;
+    }
+
+    .entrance-content .intro-text {
+      font-family: helvetica;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-top: -1rem;
+      color: #333333;
+    }
+
+    .entrance-content .intro-text:hover {
+      opacity: .9;
+    }
+
+    .entrance-content .intro-text a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
 </html>
